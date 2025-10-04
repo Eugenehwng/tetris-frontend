@@ -330,10 +330,15 @@ function App() {
         </div>
       ) : (
         <div>
-          <p>Room ID: {roomId} | Player ID: {playerId}</p>
+          <div className="room-info">
+            <p>Room ID: {roomId} | Player ID: {playerId}</p>
+            <p>Status: {connected ? 'Connected' : 'Disconnected'}</p>
+          </div>
 
           {!gameStarted ? (
-            <button onClick={startGame}>Start Game</button>
+            <div className="lobby">
+              <button onClick={startGame}>Start Game</button>
+            </div>
           ) : (
             <div className="game-container">
               <div className="player-board">
